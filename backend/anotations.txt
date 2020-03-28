@@ -1,0 +1,36 @@
+Tipo de parâmetros:
+
+- Query Params: Parâmetros passados através da rota após o sinal de "?",
+    normalmente utilizado para filtros, paginação.
+    (https://meuapp.com/users?page=1&name=Gui)
+    req.query.page;
+    req.query.name;
+
+- Route Params: Parâmetros utilizado para identificar recursos/entidades
+    (https://meuapp.com/users/1)
+    :id
+    req.params.id;
+
+- Request Body: Corpo da requisição para criar ou atualizar o recurso
+    (body da requisição)
+    req.body
+
+--------------------------------------------------------------------------------
+Banco de dados:
+-- Duas formas de se utilizar
+    - Driver: 'SELECT * FROM users WHERE id > 1';
+    - Query Builder: table('users').select('*').where('id', 1);
+
+- Instalação do Knex JS (Query Builder para NodeJS) e do driver do banco que utilizaremos (sqlite3)
+    npm install knex --save
+    npm install sqlite3 --save
+
+- Criação do arquivo de configuração de acesso
+    npx knex init
+    (irá criar o arquivo knexfile.js)
+
+--------------------------------------------------------------------------------
+Criação das tabelas
+- Migrations
+    http://knexjs.org/#Installation-migrations
+
